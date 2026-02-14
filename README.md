@@ -1,6 +1,6 @@
 全日貨運 / 同興實業 庫存比對工具
 
-連結：
+連結：https://jeterh.github.io/TongHsing_Roundday_InStockQuantityComparison/
  
 本文件記載了「全日庫存表」與「同興庫存表」比對工具的開發重點與使用注意事項。
 
