@@ -1,69 +1,65 @@
 /* 引入 Tailwind CSS 官方預編譯樣式 (穩定版本) */
 @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
 
-/* 配色優化說明：
-  1. 背景色：改為更深的 slate-100 (#F1F5F9)，與純白卡片形成對比。
-  2. 文字色：主要文字改為深 slate-900，副標題改為中深 slate-600。
-  3. 強調色：使用高飽和度的深藍色 (#1E40AF) 與深綠色 (#065F46)，提升對比度。
-*/
-
+/* 專業高對比配色方案 */
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f1f5f9; /* 背景 */
-  color: #0f172a; /* 深色文字，確保可讀性 */
+  background-color: #f8fafc; /* 極淺灰藍背景，讓卡片更突出 */
+  color: #1e293b; /* 深灰文字，提升閱讀舒適度 */
 }
 
-/* 確保 React 容器撐滿螢幕 */
 #root {
   min-height: 100vh;
 }
 
-/* 標題欄強化 */
+/* 強化標題對比 */
 header {
-  background-color: #1e293b !important; /* 深灰色背景 */
-  border-bottom: 2px solid #475569;
+  background-color: #0f172a !important; /* 深海軍藍，最高對比 */
+  border-bottom: 4px solid #3b82f6; /* 亮藍底線增加設計感 */
 }
 
 header h1 {
   color: #ffffff !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  font-weight: 900 !important;
+  letter-spacing: 0.05em;
 }
 
-/* 調整卡片內的文字對比度 */
-.text-slate-400 { color: #475569 !important; } /* 加深灰色文字 */
-.text-slate-500 { color: #334155 !important; }
-.text-slate-600 { color: #1e293b !important; }
-
-/* 針對上傳區域的狀態文字進行加深 */
-.file-status-text {
-  color: #334155;
-  font-weight: 500;
-}
-
-/* 列表標題對比強化 */
+/* 列表標題 (thead) 強化 */
 thead tr {
-  background-color: #e2e8f0 !important;
+  background-color: #334155 !important; /* 深灰色表頭 */
 }
 
 th {
-  color: #0f172a !important;
-  font-weight: 700 !important;
+  color: #ffffff !important; /* 表頭文字純白 */
+  font-size: 0.95rem !important;
+  padding: 1rem !important;
+  border-right: 1px solid #475569 !important;
 }
 
-/* 異常狀態標籤顏色修正 (更深、更清晰) */
-.bg-red-100 { background-color: #fee2e2 !important; border: 1px solid #f87171; }
-.text-red-700 { color: #991b1b !important; }
-.bg-orange-100 { background-color: #ffedd5 !important; border: 1px solid #fb923c; }
-.text-orange-700 { color: #9a3412 !important; }
-
-/* 自定義動畫 */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* 表格格線強化 */
+td {
+  border-bottom: 1px solid #e2e8f0;
+  border-right: 1px solid #f1f5f9;
 }
 
-.animate-fadeIn {
-  animation: fadeIn 0.4s ease-out forwards;
+/* 按鈕醒目化 */
+.btn-primary {
+  background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
+  color: white !important;
+  box-shadow: 0 10px 15px -3px rgba(67, 56, 202, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(67, 56, 202, 0.5);
+  background: #312e81;
+}
+
+/* 彈窗樣式強化 */
+.modal-overlay {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  backdrop-filter: blur(4px);
 }
