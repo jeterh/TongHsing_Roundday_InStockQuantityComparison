@@ -4,12 +4,55 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>庫存比對工具</title>
-    <!-- 引入 Tailwind CSS CDN (用於快速預覽) -->
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <title>庫存比對工具 | 全日 VS 同興</title>
+    
+    <!-- 1. 強制載入 Tailwind CSS CDN，確保即便本地編譯有問題，UI 也能正確呈現 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. 設定 Tailwind 配置，確保支持我們在 App.jsx 中使用的自定義數值 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            borderRadius: {
+              'xl': '1rem',
+              '2xl': '1.5rem',
+              '3xl': '2rem',
+              '4xl': '2.5rem',
+              '5xl': '3rem',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- 3. 基礎樣式補強，防止頁面加載時閃爍 (FOUC) -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #F8FAFC;
+        overflow-x: hidden;
+      }
+      /* 優化滾動條外觀 */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <!-- 確保此路徑與您的專案結構一致 -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
